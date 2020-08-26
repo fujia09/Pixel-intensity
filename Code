@@ -1,0 +1,20 @@
+from PIL import image
+
+img = Image.open('five.png')
+
+data = list(img.getdata())
+
+new = []
+
+
+for i in data:
+    i = sum(i)/3
+    new.append(i)
+
+
+for i in range(len(new)):
+    new[i] = 255 - new[i]
+
+
+print(new)
+
